@@ -1,0 +1,432 @@
+/* COLORES PRINCIPALES: se cambian aquí para toda la página */
+:root {
+  --fondo: #faf7f5;
+  --texto: #302735;
+  --verde-oscuro: #155c4c;
+  --rosa-intenso: #8e246c;
+  --rosa-boton: #92577e;
+  --rosa-claro: #fbe7f6;
+  --lila: #e4dffb;
+  --verde-claro: #d6e8c7;
+}
+
+/* LOTUS & CO. | Estilos de la página (HTML + CSS, sin JavaScript) */
+/* Lotus & Co. — rediseño estático con las imágenes originales */
+* {
+  box-sizing:border-box;
+}
+
+/* AJUSTES GENERALES */
+html {
+  scroll-behavior:smooth;
+}
+body {
+  margin:0;
+  background:var(--fondo);
+  color:var(--texto);
+  font-family:Suranna,Georgia,serif;
+}
+main {
+  max-width:1320px;
+  margin:auto;
+}
+section {
+  padding:35px 6% 85px;
+  margin:18px 0;
+  border-radius:24px;
+  overflow:hidden;
+}
+
+/* ENCABEZADO Y MENÚ */
+header {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  margin-bottom:35px;
+}
+header>a {
+  font-size:39px;
+  color:var(--verde-oscuro);
+  text-decoration:none;
+  line-height:1;
+  border-bottom:1px solid var(--verde-oscuro);
+  padding:4px 0;
+}
+nav {
+  display:flex;
+  gap:30px;
+  flex-wrap:wrap;
+}
+nav a {
+  color:var(--rosa-intenso);
+  text-decoration:none;
+  font-size:22px;
+  border-bottom:2px solid transparent;
+}
+nav a:hover {
+  border-color:currentColor;
+}
+h1,h2,h3,p {
+  margin-top:0;
+}
+
+/* INICIO: PORTADA */
+.home {
+  background:var(--rosa-claro);
+}
+.hero {
+  min-height:420px;
+  display:flex;
+  align-items:center;
+  padding:55px 7%;
+  border-radius:20px;
+  background:linear-gradient(90deg,#fff5f3ed 0%,#fff4f3b8 43%,#fbe7f600 100%),url('../assets/hero-flores.png') center/cover;
+}
+.hero-copy {
+  max-width:480px;
+}
+.hero-copy span,.section-heading span,.promotion span,.eyebrow {
+  font:12px Arial,sans-serif;
+  letter-spacing:3px;
+  color:var(--rosa-boton);
+}
+h1 {
+  font-size:clamp(48px,6vw,76px);
+  font-weight:normal;
+  line-height:.99;
+  margin:18px 0;
+}
+.hero p {
+  font-size:24px;
+  margin-bottom:30px;
+}
+.hero a,.promotion a,.order-options>a {
+  display:inline-block;
+  padding:12px 27px;
+  border-radius:40px;
+  background:var(--rosa-boton);
+  color:white;
+  text-decoration:none;
+  font-size:19px;
+}
+
+/* TÍTULO Y TARJETAS DE PRODUCTOS */
+.section-heading {
+  text-align:center;
+  margin:58px 0 26px;
+}
+.section-heading h2 {
+  font-size:42px;
+  font-weight:normal;
+  margin:8px 0;
+}
+.products {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:25px;
+}
+.products article {
+  background:#fffaf4;
+  border-radius:18px;
+  padding:13px 13px 24px;
+  text-align:center;
+  box-shadow:0 12px 35px #653b5315;
+}
+.products img {
+  width:100%;
+  aspect-ratio:1/1.05;
+  object-fit:cover;
+  display:block;
+  border-radius:12px;
+}
+.products p {
+  font-size:27px;
+  line-height:1.05;
+  margin:18px 0 6px;
+}
+.products small {
+  font:13px Arial,sans-serif;
+  color:#846f7a;
+}
+
+/* PROMOCIÓN */
+.promotion {
+  display:grid;
+  grid-template-columns:1.15fr 1fr;
+  min-height:340px;
+  border-radius:20px;
+  overflow:hidden;
+  margin-top:65px;
+  position:relative;
+}
+.promotion>img:first-child {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.promotion>div {
+  background:#91bf7b;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:flex-start;
+  padding:50px;
+}
+.promotion span {
+  color:#255a46;
+}
+.promotion p {
+  font-size:46px;
+  line-height:1.05;
+  margin:17px 0;
+}
+.promotion strong {
+  font:14px Arial,sans-serif;
+  letter-spacing:2px;
+  margin-bottom:25px;
+}
+.promotion>img:last-child {
+  position:absolute;
+  width:62px;
+  right:18px;
+  bottom:12px;
+}
+
+/* PEDIDOS: GALERÍA Y DETALLES */
+.orders {
+  background:var(--lila);
+}
+.order-layout {
+  display:grid;
+  grid-template-columns:1.08fr 1fr;
+  gap:6%;
+  align-items:center;
+}
+.gallery {
+  display:grid;
+  grid-template-columns:75px minmax(0,1fr);
+  gap:14px;
+  align-items:center;
+}
+.thumbnails {
+  display:grid;
+  gap:13px;
+}
+.gallery img {
+  width:100%;
+  display:block;
+  object-fit:cover;
+  border-radius:13px;
+  background:white;
+}
+.thumbnails img {
+  aspect-ratio:1;
+}
+.gallery>img {
+  aspect-ratio:1/1.12;
+  box-shadow:0 16px 35px #52447920;
+}
+.details {
+  background:#ffffffb5;
+  padding:38px;
+  border-radius:22px;
+}
+.details h2 {
+  font-size:49px;
+  line-height:1.05;
+  font-weight:normal;
+  margin:12px 0 23px;
+}
+.details h3 {
+  font-size:24px;
+  font-weight:normal;
+  margin:22px 0 9px;
+}
+.details p {
+  font-size:19px;
+  line-height:1.3;
+}
+.sizes>div {
+  display:flex;
+  gap:9px;
+  align-items:center;
+  font-size:23px;
+  margin:9px 0;
+  padding:7px 12px;
+  border:1px solid #d9c9dd;
+  border-radius:10px;
+}
+.radio {
+  width:16px;
+  height:16px;
+  background:#f7eaf6;
+  border:2px solid #a179a4;
+  border-radius:50%;
+  display:inline-block;
+}
+.delivery-title {
+  font-size:23px;
+  margin:22px 0 10px;
+}
+.delivery-fields {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+.delivery-fields>div {
+  background:#f9d9f4;
+  border-radius:10px;
+  padding:12px;
+  text-align:center;
+  font-size:18px;
+}
+.order-options>a {
+  display:block;
+  text-align:center;
+  margin-top:23px;
+  border-radius:12px;
+}
+
+/* CONTACTO Y PIE DE PÁGINA */
+.contact {
+  background:var(--verde-claro);
+}
+.contact-banner {
+  min-height:335px;
+  padding:45px;
+  border-radius:20px;
+  display:flex;
+  align-items:center;
+  background:linear-gradient(90deg,#e9f4dfed,#e9f4dfb8 55%,#e9f4df24),url('../assets/contact-flores.png') center/cover;
+}
+.contact-info {
+  max-width:720px;
+}
+.contact-info h2 {
+  font-size:53px;
+  font-weight:normal;
+  line-height:1;
+  margin:14px 0 23px;
+}
+.contact-info h3 {
+  font-size:23px;
+  font-weight:normal;
+  margin:0 0 8px;
+}
+.contact-info p {
+  font-size:22px;
+  margin:2px 0;
+  overflow-wrap:anywhere;
+}
+footer {
+  display:grid;
+  grid-template-columns:1.1fr 1fr .7fr;
+  gap:30px;
+  margin-top:24px;
+  padding:45px;
+  border-radius:20px;
+  background:var(--rosa-boton);
+  color:white;
+}
+footer h3 {
+  font-size:22px;
+  font-weight:normal;
+  margin:0 0 10px;
+}
+footer a {
+  display:block;
+  color:white;
+  text-decoration:none;
+  font-size:17px;
+  line-height:1.25;
+  opacity:.9;
+}
+footer>div:nth-child(2) h3:not(:first-child) {
+  margin-top:23px;
+}
+footer>div:last-child {
+  text-align:center;
+  align-self:center;
+}
+footer>div:last-child>div {
+  display:flex;
+  justify-content:center;
+  gap:18px;
+  margin-top:20px;
+}
+footer img {
+  width:43px;
+  height:43px;
+  object-fit:contain;
+}
+
+/* ADAPTACIÓN A TABLETAS */
+@media (max-width: 800px) {
+  section {
+    padding:25px 5% 45px;
+    margin:10px 0;
+  }
+  header {
+    flex-direction:column;
+  }
+  nav {
+    gap:17px;
+  }
+  .hero {
+    min-height:350px;
+  }
+  .products {
+    gap:12px;
+  }
+  .products p {
+    font-size:21px;
+  }
+  .promotion,.order-layout {
+    grid-template-columns:1fr;
+  }
+  .promotion>img:first-child {
+    max-height:250px;
+  }
+  .order-layout {
+    gap:25px;
+  }
+  .details {
+    padding:25px;
+  }
+  footer {
+    grid-template-columns:1fr 1fr;
+  }
+  footer>div:last-child {
+    grid-column:1/-1;
+  }
+}
+
+/* ADAPTACIÓN A CELULARES */
+@media (max-width: 520px) {
+  .hero {
+    padding:35px 7%;
+    background:linear-gradient(90deg,#fff5f3e8,#fff5f3a0),url('../assets/hero-flores.png') center/cover;
+  }
+  .products {
+    grid-template-columns:1fr;
+  }
+  .products img {
+    aspect-ratio:1.4;
+  }
+  .promotion>div {
+    padding:32px;
+  }
+  .gallery {
+    grid-template-columns:55px 1fr;
+  }
+  .delivery-fields {
+    grid-template-columns:1fr;
+  }
+  footer {
+    grid-template-columns:1fr;
+  }
+  footer>div:last-child {
+    grid-column:auto;
+  }
+}
